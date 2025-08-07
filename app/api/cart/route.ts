@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { products } from '../products/route'
 import { CartItem } from '@/types/cart'
+import { products } from '@/data/products'
 
 let cart: CartItem[] = []
 
