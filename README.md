@@ -25,7 +25,7 @@ Este proyecto es una aplicación de carrito de compras construida con **Next.js 
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/nombre-del-repo.git
+git clone https://github.com/matiasrolon1301/carrito-challenge
 cd nombre-del-repo
 ```
 
