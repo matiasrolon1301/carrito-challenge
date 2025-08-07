@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { CartItem as CartItemType} from "@/types/cart";
+import { CartItem as CartItemType } from "@/types/cart";
 import CartItem from "./CartItem";
 
 interface Props {
@@ -38,7 +38,15 @@ export default function SideCart({ open, onClose, onClearCart, cart }: Props) {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="w-screen max-w-md bg-white p-6 shadow-xl">
+            <Dialog.Panel className="relative w-screen max-w-md bg-white p-6 shadow-xl">
+              <button
+                onClick={onClose}
+                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl cursor-pointer"
+                aria-label="Cerrar carrito"
+              >
+                &times;
+              </button>
+
               <Dialog.Title className="text-xl font-bold mb-6">
                 Tu carrito
               </Dialog.Title>
@@ -48,9 +56,13 @@ export default function SideCart({ open, onClose, onClearCart, cart }: Props) {
               ) : (
                 <div className="space-y-4">
                   <ul className="divide-y divide-gray-200">
-                    {cart.map(({name,  price, quantity, id}) => (
+                    {cart.map(({ name, price, quantity, id }) => (
                       <li key={id} className="py-4">
-                        <CartItem name={name} price={price} quantity={quantity}/>
+                        <CartItem
+                          name={name}
+                          price={price}
+                          quantity={quantity}
+                        />
                       </li>
                     ))}
                   </ul>
